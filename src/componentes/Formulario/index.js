@@ -6,10 +6,14 @@ import { useState } from "react";
 
 
 const Formulario = (props) => {
-    var list = [
-        "Front-end",
-        "Back-end",
-        "Data sciencie"
+    const times = [
+        'Programação',
+        'Front-End',
+        'Data Science',
+        'Devops',
+        'UX e Design',
+        'Mobile',
+        'Inovação e Gestão'
     ]
 
     const [nome, setNome] = useState('');
@@ -59,7 +63,7 @@ const Formulario = (props) => {
                     valor={time} 
                     obrigatorio="true" 
                     label="Cargo" 
-                    itens={list} 
+                    itens={times} 
                     aoAlterado={valor=>setTime(valor)}
                     />
                 <Botao>Criar Card</Botao>
