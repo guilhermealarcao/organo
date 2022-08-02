@@ -1,10 +1,12 @@
 import './Card.css'
 
-const Card = ({ imagem, nome, cargo }) => {
-    console.log(imagem)
+const Card = ({ imagem, nome, cargo, corDeFundo }) => {
+
+    const css = { backgroundColor: corDeFundo }
+
     return (
         <div className='card'>
-            <div className='cabecalho'>
+            <div className='cabecalho' style={css}>
                 <img src={imagem} />
             </div>
             <div className='rodape'>

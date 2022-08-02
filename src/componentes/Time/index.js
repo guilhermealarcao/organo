@@ -11,7 +11,15 @@ const Time = (props) => {
         props.colaboradores.length > 0 && <section className='time' style={cssSection}>
             <h3 style={cssTitle}>{props.nome}</h3>
             <div className='colaboradores'>
-                {props.colaboradores.map((item, index) => < Card imagem={item.imagem} nome={item.nome} cargo={item.cargo} key={index} />)}
+                {props.colaboradores.map((item, index) => 
+                
+                    < Card  
+                        imagem={item.imagem}
+                        nome={item.nome} 
+                        cargo={item.cargo} 
+                        key={index} 
+                        corDeFundo={props.corPrimeira}
+                    />)}
             </div>
         </section>
     )

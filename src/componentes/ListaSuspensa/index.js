@@ -1,6 +1,6 @@
 import './ListSuspensa.css';
 
-const ListSuspensa = ({ label, itens, obrigatorio, aoAlterado }) => {
+const ListSuspensa = ({ valor, label, itens, obrigatorio, aoAlterado }) => {
 
     const aoDigitar = (evento) => {
         aoAlterado(evento.target.value)
@@ -9,8 +9,11 @@ const ListSuspensa = ({ label, itens, obrigatorio, aoAlterado }) => {
     return (
         <div onChange={aoDigitar} className='lista-suspensa'>
             <label>{label}</label>
-            <select  onChange={aoDigitar}  required={obrigatorio}>
-                <option disabled>selecione</option>
+            <select 
+                    onChange={aoDigitar}  
+                    required={obrigatorio}
+                    value={valor}>
+                <option>selecione</option>
                 {itens.map((item, index) => {
                     return <option key={index}>{item}</option>
                 })}
