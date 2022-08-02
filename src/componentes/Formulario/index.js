@@ -5,7 +5,7 @@ import './Formulario.css';
 import { useState } from "react";
 
 
-const Formulario = () => {
+const Formulario = (props) => {
     var list = [
         "Front-end",
         "Back-end",
@@ -18,7 +18,16 @@ const Formulario = () => {
     const [time, setTime] = useState('');
     
     const aoSalvar = (event) => {
-        event.preventdefault();
+        event.preventDefault();
+
+        props.aoSubmit(
+          {
+            nome,
+            cargo,
+            imagem,
+            time
+          }
+        )
     }
 
 
