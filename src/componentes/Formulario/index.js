@@ -6,23 +6,28 @@ import { useState } from "react";
 
 
 const Formulario = (props) => {
-    
+
     const [nome, setNome] = useState('');
     const [cargo, setCargo] = useState('');
     const [imagem, setImagem] = useState('https://github.com/viniciosneves.png');
     const [time, setTime] = useState('');
-    
+
     const aoSalvar = (event) => {
         event.preventDefault();
 
         props.aoSubmit(
-          {
-            nome,
-            cargo,
-            imagem,
-            time
-          }
+            {
+                nome,
+                cargo,
+                imagem,
+                time
+            }
         )
+
+        setNome('');
+        setCargo('');
+        setImagem('');
+        setTime('');
     }
 
 
@@ -30,33 +35,33 @@ const Formulario = (props) => {
         <section className="formulario">
             <form onSubmit={aoSalvar}>
                 <h2>Preencha os dados para criar o card do colaborador  no orgrana</h2>
-                <CampoTexto 
-                    valor={nome} 
-                    obrigatorio="true" 
-                    label="Nome" 
-                    placeholder="Digite seu nome" 
-                    aoAlterado={valor=>setNome(valor)}
-                    />
-                <CampoTexto 
-                    valor={cargo} 
+                <CampoTexto
+                    valor={nome}
                     obrigatorio="true"
-                    label="Cargo" 
-                    placeholder="Digite seu cargo" 
-                    aoAlterado={valor=>setCargo(valor)}
-                 />
-                <CampoTexto 
+                    label="Nome"
+                    placeholder="Digite seu nome"
+                    aoAlterado={valor => setNome(valor)}
+                />
+                <CampoTexto
+                    valor={cargo}
+                    obrigatorio="true"
+                    label="Cargo"
+                    placeholder="Digite seu cargo"
+                    aoAlterado={valor => setCargo(valor)}
+                />
+                <CampoTexto
                     valor={imagem}
-                    label="Imagem" 
+                    label="Imagem"
                     placeholder="Digite a url da imagem"
-                    aoAlterado={valor=>setImagem(valor)}
-                 />
-                <ListSuspensa 
-                    valor={time} 
-                    obrigatorio="true" 
-                    label="Cargo" 
-                    itens={props.times} 
-                    aoAlterado={valor=>setTime(valor)}
-                    />
+                    aoAlterado={valor => setImagem(valor)}
+                />
+                <ListSuspensa
+                    valor={time}
+                    obrigatorio="true"
+                    label="Cargo"
+                    itens={props.times}
+                    aoAlterado={valor => setTime(valor)}
+                />
                 <Botao>Criar Card</Botao>
             </form >
         </section >

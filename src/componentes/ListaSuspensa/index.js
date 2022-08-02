@@ -10,6 +10,7 @@ const ListSuspensa = ({ label, itens, obrigatorio, aoAlterado }) => {
         <div onChange={aoDigitar} className='lista-suspensa'>
             <label>{label}</label>
             <select  onChange={aoDigitar}  required={obrigatorio}>
+                <option disabled>selecione</option>
                 {itens.map((item, index) => {
                     return <option key={index}>{item}</option>
                 })}
