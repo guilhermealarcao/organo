@@ -1,14 +1,15 @@
 import './Card.css'
 
-const Card =(props)=>{
-    return(
+const Card = ({ imagem, nome, cargo }) => {
+    console.log(imagem)
+    return (
         <div className='card'>
             <div className='cabecalho'>
-                <img src="https://github.com/viniciosneves.png"/>
+                <img src={imagem} />
             </div>
             <div className='rodape'>
-                <h4>Guilherme</h4>
-                <h5>Instrutor</h5>
+                <h4>{nome}</h4>
+                <h5>{cargo}</h5>
             </div>
         </div>
     )

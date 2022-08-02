@@ -9,7 +9,7 @@ const Formulario = (props) => {
     
     const [nome, setNome] = useState('');
     const [cargo, setCargo] = useState('');
-    const [imagem, setImagem] = useState('');
+    const [imagem, setImagem] = useState('https://github.com/viniciosneves.png');
     const [time, setTime] = useState('');
     
     const aoSalvar = (event) => {
